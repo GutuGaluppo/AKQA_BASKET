@@ -1,14 +1,143 @@
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: droid-serif, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to bottom, #fefefe, #dadada);
+  background-repeat: no-repeat;
+  font-size: 12pt;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+input {
+  margin: 5px;
+  width: 20px;
+  text-align: right;
+  padding: 4px;
+}
+
+table {
+  margin: 0 auto;
+}
+
+table {
+  color: #333;
+  border-collapse: collapse;
+}
+
+table th {
+  border-bottom: 1px solid silver;
+}
+
+table thead th {
+  color: rgb(31, 31, 31);
+}
+
+table caption {
+  padding:.5em;
+}
+
+table td {
+  padding: .5em;
+  border: 1px solid transparent;
+}
+
+tbody tr:nth-of-type(even) {
+  background: rgba(0,0,0,.05);
+}
+
+.trash {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.buy-btn-disabled {
+  padding: 1vh;
+  border-radius: 9px;
+  margin: 15px;
+  background: #9d9dc5;
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  font-family: droid-sans, sans-serif;
+  box-shadow: 2px 2px 5px gray;
+}
+
+.buy-btn {
+  padding: 1vh;
+  border-radius: 9px;
+  margin: 15px;
+  background: #00006a;
+  color: white;
+  font-family: droid-sans, sans-serif;
+  font-weight: 800;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px gray;
+}
+
+.buy-btn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buy-btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buy-btn:hover span {
+  padding-right: 25px;
+}
+
+.buy-btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.content {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  text-align: left;
+  padding: 20px;
+  margin: 2em;
+  min-height: 100%;
+}
+
+.left {
+  text-align: left;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: #666;
+  color: white;
+  font-size: 10px;
+  font-family:  droid-sans, sans-serif;
+  top: 0px;
+}
+
+footer p {
+  
+  vertical-align: middle;
 }
