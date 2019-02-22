@@ -1,6 +1,5 @@
 import React from 'react';
 import Buttons from './Buttons';
-// import SubTotal from './App'
 
 const Product = ({ products, onChange, deleteItem }) => (
     <table>
@@ -33,7 +32,7 @@ const Product = ({ products, onChange, deleteItem }) => (
                             onChange={onChange} />
                     </td>
                     <td>
-                        £ {product.price * product.qty}
+                        £ {(product.price * product.qty).toFixed(2)}
                     </td>
                     <td>
                         <i className="fas fa-trash-alt trash" onClick={() => deleteItem(product.id)}></i>

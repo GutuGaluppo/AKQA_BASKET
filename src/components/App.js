@@ -52,28 +52,28 @@ class App extends React.Component {
     return (
       <div>
         <div className="content">
-          <Logo />
-
-
           <div>
-            <h2>Your Basket</h2>
-            <p>
-              Items you have added to your basket are shown below.
+            <Logo />
+            <div>
+              <h2>Your Basket</h2>
+              <p className="p-cnt">
+                Items you have added to your basket are shown below.
               <br />
-              Ajust the quantities or remove items before continuing your purchsde.
-        </p>
+                Ajust the quantities or remove items before continuing your purchsde.
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="content">
-          <ProductsTable
-            products={this.state.products}
-            onChange={this.onChange}
-            deleteItem={this.deleteItem}
-          />
-          <SubTotal products={this.state.products} />
-          <Tax products={this.state.products} />
-          <Total products={this.state.products} />
-          <BuyButton enabled={isEnable(this.state.products)} />
+          <div>
+            <ProductsTable
+              products={this.state.products}
+              onChange={this.onChange}
+              deleteItem={this.deleteItem}
+            />
+            <SubTotal products={this.state.products} />
+            <Tax products={this.state.products} />
+            <Total products={this.state.products} />
+            <BuyButton enabled={isEnable(this.state.products)} />
+          </div>
         </div>
         <Footer />
       </div>
@@ -99,18 +99,18 @@ const getTotal = (products) => {
 }
 
 const SubTotal = ({ products }) => (
-  <p>
+  <p className="cost">
     Subtotal:
-    <span className="cost">
+      <span>
       £{getSubtotal(products).toFixed(2)}
     </span>
   </p>
 );
 
 const Tax = ({ products }) => (
-  <p>
-    VAT @20%:
-    <span className="cost">
+  <p className="cost">
+    VAT 20%:
+    <span>
       £{getVat(products).toFixed(2)}
     </span>
   </p>
@@ -118,9 +118,9 @@ const Tax = ({ products }) => (
 
 const Total = ({ products }) => (
   <p>
-    <strong>
+    <strong className="cost">
       Total Cost:
-      <span className="cost">
+      <span>
         £{getTotal(products).toFixed(2)}
       </span>
     </strong>

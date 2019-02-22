@@ -10,6 +10,12 @@ body {
   font-size: 12pt;
 }
 
+@media only screen and (max-width: 600px) {  
+  body {
+    font-size: 9pt;
+  }
+}
+
 input {
   margin: 5px;
   width: 20px;
@@ -41,10 +47,22 @@ table caption {
 table td {
   padding: .5em;
   border: 1px solid transparent;
+  align-items: center;
 }
 
 tbody tr:nth-of-type(even) {
   background: rgba(0,0,0,.05);
+}
+
+.cost{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: row; 
 }
 
 .trash {
@@ -53,6 +71,8 @@ tbody tr:nth-of-type(even) {
 }
 
 .buy-btn-disabled {
+  float: right;
+  margin: 15px 40px 15px 15px;
   padding: 1vh;
   border-radius: 9px;
   margin: 15px;
@@ -65,9 +85,10 @@ tbody tr:nth-of-type(even) {
 }
 
 .buy-btn {
+  float: right;
   padding: 1vh;
   border-radius: 9px;
-  margin: 15px;
+  margin: 15px 40px 15px 15px;
   background: #00006a;
   color: white;
   font-family: droid-sans, sans-serif;
@@ -102,6 +123,16 @@ tbody tr:nth-of-type(even) {
   right: 0;
 }
 
+.btn-qty {
+  justify-content: center;
+  align-items: center;
+  background: rgb(157, 157, 157);
+  color:white;
+  width: 15px;
+  height: 13px;
+  padding: 0;
+}
+
 .content {
   display: -webkit-flex;
   display: flex;
@@ -112,15 +143,22 @@ tbody tr:nth-of-type(even) {
   -webkit-flex-direction: column;
   text-align: left;
   padding: 20px;
-  margin: 2em;
+  margin: 2em auto;
   min-height: 100%;
 }
 
-.left {
-  text-align: left;
+.p-cnt {
+  margin: 0 auto 30px auto;
+  font-size: 10pt;
 }
 
-.flexColumn {
+@media only screen and (max-width: 600px) {  
+  .p-cnt {
+    font-size: 9pt;
+  }
+}
+
+.flex-cln {
   display: flex;
   flex-direction: column;
 }
@@ -138,6 +176,5 @@ footer {
 }
 
 footer p {
-  
   vertical-align: middle;
 }
